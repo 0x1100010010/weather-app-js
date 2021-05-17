@@ -4,7 +4,10 @@
   "description": "JS Weather App",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack --progress --watch --mode development",
+    "start": "webpack serve --mode development "
   },
   "repository": {
     "type": "git",
