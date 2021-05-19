@@ -13,7 +13,8 @@ export const api = (e) => {
     });
 
     const units = document.getElementById('toggle-status').checked ? 'imperial' : 'metric';
-    const data = init(e.target.elements.name.value, units)
+    // const data = init(e.target.elements.name.value, units)
+    const data = init(document.getElementById('location-name').value, units)
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${data.city}&units=${data.units}&appid=${data.apikey}`
     console.log(url)
 
