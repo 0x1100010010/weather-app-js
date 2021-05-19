@@ -12,10 +12,10 @@ export const api = (e) => {
       city, units, apikey
     });
 
-    const units = document.getElementById('toggle-status').checked ? 'metric' : 'imperial';
-    const data = init(e.target.elements.name.value, 'imperial')
+    const units = document.getElementById('toggle-status').checked ? 'imperial' : 'metric';
+    const data = init(e.target.elements.name.value, units)
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${data.city}&units=${data.units}&appid=${data.apikey}`
-
+    console.log(url)
 
     fetch(url)
       .then(response => response.json())
@@ -25,9 +25,14 @@ export const api = (e) => {
         window.icon = `http://openweathermap.org/img/wn/${weather.icon}@2x.png`
         status();
       });
+
+    return {
+      units,
+    }
   } catch (e) {
     console.log('Api called!')
   }
+
 }
 
 // export default ;

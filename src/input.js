@@ -5,7 +5,7 @@ export const input = () => {
   codefactory('label', { class: 'flex items-center cursor-pointer my-4', for: 'toggle-status', id: 'toggle-button-label' }, '', 'body-content')
   codefactory('span', { class: '' }, 'Celsius', 'toggle-button-label')
   codefactory('div', { class: 'relative mx-3', id: 'toggle-button-container' }, '', 'toggle-button-label')
-  codefactory('input', { class: 'sr-only', type: 'checkbox', id: 'toggle-status' }, '', 'toggle-button-container').addEventListener('change', () => {document.getElementById("toggle-status").checked ? console.log('checked!') : console.log('unchecked!!')});
+  codefactory('input', { class: 'sr-only', type: 'checkbox', id: 'toggle-status' }, '', 'toggle-button-container').addEventListener('change', () => {document.getElementById('toggle-status').checked ? console.log('checked!') : console.log('unchecked!')});
   codefactory('div', { class: 'w-10 h-4 bg-gray-400 rounded-full shadow-inner' }, '', 'toggle-button-container')
   codefactory('div', { class: 'dot absolute w-6 h-6 bg-white rounded-full shadow -left-1 -top-1 transition' }, '', 'toggle-button-container')
   codefactory('span', { class: '' }, 'Fahrenheit', 'toggle-button-label')
