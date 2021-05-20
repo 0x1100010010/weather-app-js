@@ -1,6 +1,6 @@
 import { codefactory } from './codefactory';
 import { input } from './input';
-import { status } from './status'
+import { status } from './status';
 
 const body = () => {
   codefactory('section', { class: 'text-gray-600 body-font overflow-hidden', id: 'body-section' }, '', 'content');
@@ -12,6 +12,5 @@ const body = () => {
   input();
   status();
 };
-
 
 export default body;
