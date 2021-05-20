@@ -1,0 +1,37 @@
+{
+  "name": "weather-app-js",
+  "version": "0.0.1",
+  "description": "JS Weather App",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack --progress --watch --mode development",
+    "start": "webpack serve --mode development "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bashforger/weather-app-js.git"
+  },
+  "keywords": [
+    "weather-app"
+  ],
+  "author": "bashforger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bashforger/weather-app-js/issues"
+  },
+  "homepage": "https://github.com/bashforger/weather-app-js#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "css-loader": "^5.2.4",
+    "eslint": "^7.26.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.2",
+    "sass": "^1.32.13",
+    "sass-loader": "^11.1.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0"
+  }
+}
