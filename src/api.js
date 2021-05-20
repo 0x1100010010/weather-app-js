@@ -1,5 +1,7 @@
 import { status } from './status'
 
+import { codefactory } from './codefactory'
+
 export const api = (e) => {
   try {
     e.preventDefault();
@@ -20,17 +22,27 @@ export const api = (e) => {
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        console.log(data);
-        window.weather = weatherData(data.weather[0].icon, data.sys.country, data.weather[0].main, data.weather[0].description, data.main.feels_like, data.main.humidity, data.main.pressure, data.main.temp, data.main.temp_max, data.main.temp_min, data.clouds.all, data.wind.deg, data.wind.speed)
-        window.icon = `http://openweathermap.org/img/wn/${weather.icon}@2x.png`
-        status();
+        if (data.message) {
+          let el = document.getElementById('error')
+          el ? el.remove() : console.log('Not Found!');
+          console.log(data.message)
+          codefactory('span', { class: 'text-red-700 transition-colors duration-200 ease-in-out', id: 'error' }, `${data.message}`, 'loaction-form')
+        } else {
+          let el = document.getElementById('error')
+          el ? el.remove() : console.log('Not Found!');
+          console.log(data);
+          window.weather = weatherData(data.weather[0].icon, data.sys.country, data.weather[0].main, data.weather[0].description, data.main.feels_like, data.main.humidity, data.main.pressure, data.main.temp, data.main.temp_max, data.main.temp_min, data.clouds.all, data.wind.deg, data.wind.speed)
+          window.icon = `http://openweathermap.org/img/wn/${weather.icon}@2x.png`
+          status();
+        }
       });
 
     return {
       units,
     }
+
   } catch (e) {
-    console.log('Api called!')
+    console.log('Idel Api!')
   }
 
 }
